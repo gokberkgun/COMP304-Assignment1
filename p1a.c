@@ -7,10 +7,10 @@ int main (int argc) {
  
   int pid;
   int n = argc;
- int level = 1
+  int level = 0
   
   //initial process
-  pid = getpid();  
+  pid_t pid = getpid();  
   printf("Main Process ID: %d, level: 0\n",pid);
   
   for (int i = 0; i < n; i++) {
