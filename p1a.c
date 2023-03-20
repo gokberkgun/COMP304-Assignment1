@@ -7,6 +7,7 @@ int main (int argc) {
  
   int pid;
   int n = argc;
+ int level = 1
   
   //initial process
   pid = getpid();  
