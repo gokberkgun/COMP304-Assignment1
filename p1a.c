@@ -10,15 +10,17 @@ void recursive_fork (int level, int n) {
     return;
   }
 
-  int pid = fork();
-  int ppid = getppid();
+  for (int i = 0; i<3 ; i++) {
+ 
+    int pid = fork();
+    int ppid = getppid();
 
-  if (pid == 0) {
-    //child process
-    printf("Process ID: %d, Parent ID: %d, level: %d\n",getpid(),getppid(), level);
-    recursive_fork(level+1,n-1);
-    exit(0);
-
+    if (pid == 0) {
+      //child process
+      printf("Process ID: %d, Parent ID: %d, level: %d\n",getpid(),getppid(), level);
+      recursive_fork(level+1,n-1);
+      exit(0);
+    }        
   }
 }
 
