@@ -10,7 +10,7 @@ int main (int argc, char *argv[]) {
   
   if (pid == 0) {
     sleep(5);
-  else {
+  } else {
     exit(0);
   }
 
