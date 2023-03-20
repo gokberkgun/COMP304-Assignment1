@@ -9,9 +9,9 @@ int main (int argc, char *argv[]) {
   
   
   if (pid == 0) {
-    sleep(5);
-  } else {
     exit(0);
+  } else {
+    sleep(5);
   }
 
   return 0;
