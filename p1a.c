@@ -12,12 +12,20 @@ int main (int argc) {
   pid = getpid();  
   printf("Main Process ID: %d, level: 0\n",pid);
   
-  for (int i = 0 ; i<n ; i++) {
-    fork();
-  }
+  for (int i = 0; i < n; i++) {
 
-  printf("Process ID: %d, Parent ID: %d, level: %d\n",getpid(),getppid(), level);
-  wait(NULL);
+    pid_t pid = fork();
+
+    if (pid == 0) { 
+     
+      level++;
+
+      printf("Process ID: %d, Parent ID: %d, level: %d \n", getpid(), getppid(), level);
+
+    } else {
+      wait(NULL);
+    }
+  }
 
   return 0;
 
