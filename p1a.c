@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 int main (int argc) {
  
@@ -9,7 +10,7 @@ int main (int argc) {
   printf("Main Process ID: %d, level: %d",parentid, level);
 
   for(i=0 ; i<argc ; i++) {
-    level += 1
+    level += 1;
     value = fork();
     pid = getpid();
     parentid = getppid();
