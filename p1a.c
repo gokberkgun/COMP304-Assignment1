@@ -5,7 +5,7 @@
  
 int main (int argc, char *argv[]) {
  
-  int n = argv[0];
+  int n = atoi(argv[0]);
   int level = 0;
   
   //initial process
