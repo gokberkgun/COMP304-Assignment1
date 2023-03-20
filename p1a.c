@@ -11,23 +11,25 @@ void recursive_fork (int level, int n) {
     return;
   }
  
-  int pid = fork();
-  int ppid = getppid();
-   
-  if (pid == 0) {
-    //child process
-    printf("Process ID: %d, Parent ID: %d, level: %d\n",getpid(),getppid(), level);
-    recursive_fork(level+1,n-1);
-    exit(0);
-  } else if (pid < 0) {
-      //false fork
+  printf("Process ID: %d, Parent ID: %d, level: %d\n",getpid(),getppid(), level);
+
+  for (int i = 0; i < n; i++) {
+    pid_t pid = fork();
+
+    if (pid < 0) {
+      //incorrect fork
       exit(1);
-  } else {
-      //parent process loop waits for all childs to exit
-      for (int i = 0 ; i<n ; i++) {
-        wait(NULL);
-      } 
-  }      
+    } else if (pid == 0) {
+       //child process
+       recursive_fork(level + 1, n - 1);
+       exit(0);
+    }
+  }
+  
+  //parent process waits for all child processes to exit
+  for (int i = 0; i < n; i++) {
+    wait(NULL);
+    }      
 } 
 
 int main (int argc) {
