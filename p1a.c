@@ -13,8 +13,9 @@ void recursive_fork (int level, int n) {
 
   if (pid == 0) {
     //child process
-    printf("Process ID: %d, Parent ID: %d, level: %d\n",pid,ppid, level);
+    printf("Process ID: %d, Parent ID: %d, level: %d\n",getpid(),getppid(), level);
     recursive_fork(level+1,n-1);
+    exit(0);
 
   }
 }
