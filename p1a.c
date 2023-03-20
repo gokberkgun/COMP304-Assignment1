@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <sys/wait.h>
  
-int main (int argc) {
+int main (int argc, char *argv[]) {
  
-  int n = argc;
+  int n = argv[0];
   int level = 0;
   
   //initial process
