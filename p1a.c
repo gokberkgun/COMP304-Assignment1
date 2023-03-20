@@ -3,21 +3,30 @@
 
 int main (int argc) {
  
-  int value, pid, parentid,level=0;
-  int i;
+  int pid;
   
-  parentid = getpid();  
-  printf("Main Process ID: %d, level: %d\n",parentid, level);
+  //initial process
+  pid = getpid();  
+  printf("Main Process ID: %d, level: 0\n",pid);
 
-  for(i=0 ; i<argc ; i++) {
-    level += 1;
-    value = fork();
-    pid = getpid();
-    parentid = getppid();
-    if (value == 0) {
-      printf("Process ID: %d, Parent ID: %d, level: %d\n",pid,parentid, level);
-    }
-  }
+  //argc is command line input n
+  recursive_fork(1,argc);
+
 } 
 
+void recursive_fork (int level, int n) {
+
+  //base case
+  if (n==0) {
+    return;
+  }
+
+  int pid = fork();
+  int ppid = getppid();
   
+  if (pid == 0) {
+    //child process
+    printf("Process ID: %d, Parent ID: %d, level: %d\n",pid,parentid, level);
+    recursive_fork(level+1,n-1);
+  }
+}  
