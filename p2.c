@@ -11,12 +11,16 @@ int main (int argc, char *argv[]) {
   float total = 0;
   struct timeval start, end;
   long int runtime;
+   
+  char *args[3] = {NULL};
   
   if (argc == 3) {
-    char *args[] = {argv[2], NULL};
+    args[0] = argv[2];
   } else if (argc == 4) {
-      char *args[] = {argv[2], argv[3], NULL};
+    args[0] = argv[2];
+    args[1] = argv[3];
   }
+ 
   for (int i = 0 ; i < n ; i++) {
       
     pid_t pid = fork();
