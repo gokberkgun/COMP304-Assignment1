@@ -22,7 +22,6 @@ int main(int argc, char *argv[]) {
   }
   int portion = count / n;
   int remainder = count % n;
-  int flag = 0;
 
   for (int i = 0 ; i < n ; i++) {
     pids[i] = fork();
@@ -46,13 +45,9 @@ int main(int argc, char *argv[]) {
       for (int k = 0 ; k < n ; k++) {
         if (k != i) {
           kill(pids[k], SIGTERM);
-          printf("child process killed");
          }
       }
     }
-  }
-  if (flag == 0) {
-    printf("Number not found.");
   }
   
   return 0;
