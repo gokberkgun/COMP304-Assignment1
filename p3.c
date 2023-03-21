@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#define MAX_NUMBERS = 1000;
+#define MAX_NUMBERS 1000;
 
 int main(int argc, char *argv[]) {
  
