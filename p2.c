@@ -43,13 +43,13 @@ int main (int argc, char *argv[]) {
             min = runtime;
         }
         total += runtime;
-        printf("Child %d Executed in %.2f millis", i+1, (float) runtime);
+        printf("Child %d Executed in %.2f millis\n", i+1, (float) runtime);
     }
   }
   float average = total / n;
-  printf("Max: %.2f millis", max);
-  printf("Min: %.2f millis", min);
-  printf("Average: %.2f millis", average);
+  printf("Max: %.2f millis\n", max);
+  printf("Min: %.2f millis\n", min);
+  printf("Average: %.2f millis\n", average);
   return 0;
 }
   
