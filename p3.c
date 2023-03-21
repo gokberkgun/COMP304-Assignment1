@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
            exit(0);
          }
        }
-     exit(1)
+     exit(1);
     } else {
         waitpid(pids[i], &status, 0);
         if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
