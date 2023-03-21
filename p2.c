@@ -38,7 +38,7 @@ int main (int argc, char *argv[]) {
         gettimeofday(&start, NULL);
         wait(NULL);
         gettimeofday(&end, NULL);
-        runtime = (float) (end.tv_sec * 1000 + end.tv_usec / 1000) - (start.tv_sec * 1000 + start.tv_usec / 1000);
+        runtime = (float) (end.tv_sec * 1000.0 + end.tv_usec / 1000.0) - (start.tv_sec * 1000.0 + start.tv_usec / 1000.0);
         if (runtime > max) {
         max = runtime;
         } 
