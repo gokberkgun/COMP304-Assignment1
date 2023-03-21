@@ -32,7 +32,6 @@ int main(int argc, char *argv[]) {
        for (int j = start ; j < end ; j++) {
          if (sequence[j] == x) {
            printf("Found at index %d\n", j);
-           flag = 1;
            exit(0);
          }
        }
