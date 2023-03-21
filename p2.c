@@ -21,12 +21,16 @@ int main (int argc, char *argv[]) {
     args[1] = argv[3];
   }
  
+  int fd = open("/dev/null", O_WRONLY);
+  
   for (int i = 0 ; i < n ; i++) {
       
     pid_t pid = fork();
       
     if (pid == 0) {
       //child process
+      dup2(fd, STDOUT_FILENO);
+      dup2(fd, STDERR_FILENO);
       execvp(args[0], args);
       exit(1);
     } else {
