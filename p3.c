@@ -29,6 +29,9 @@ int main(int argc, char *argv[]) {
     if (pids[i] == 0) {
        int start = i * portion;
        int end = (i + 1) * portion;
+       if (i == (n-1)) {
+         end += remainder;
+       }
        for (int j = start ; j < end ; j++) {
          if (sequence[j] == x) {
            printf("Found at index %d\n", j);
