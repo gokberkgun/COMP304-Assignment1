@@ -11,7 +11,7 @@ int main (int argc, char *argv[]) {
   float min=0,max=0;
   float total = 0;
   struct timeval start, end;
-  long int runtime;
+  float runtime;
    
   char *args[3] = {NULL};
   
