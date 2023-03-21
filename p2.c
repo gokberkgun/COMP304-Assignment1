@@ -39,7 +39,7 @@ int main (int argc, char *argv[]) {
             min = runtime;
         }
         total += runtime;
-        printf("Child %d Executed in %.2f millis", i+1, runtime);
+        printf("Child %d Executed in %.2f millis", i+1, (float) runtime);
     }
   }
   float average = total / n;
