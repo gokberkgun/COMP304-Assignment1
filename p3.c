@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
        int end = (i + 1) * portion;
        for (int j = start ; j < end ; j++) {
          if (sequence[j] == x) {
-           printf(Found at index %d", j);
+           printf("Found at index %d", j);
            exit(0);
          }
        }
