@@ -3,10 +3,9 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#define MAX_NUMBERS = 1000;
 
 int main(int argc, char *argv[]) {
-  
-  define MAX_NUMBERS = 1000;
  
   int x = atoi(argv[1]);
   int n = atoi(argv[2]);
@@ -25,9 +24,9 @@ int main(int argc, char *argv[]) {
   int remainder = count % n;
 
   for (int i = 0 ; i < n ; i++) {
-    pid[i] = fork();
+    pids[i] = fork();
     
-    if (pid == 0) {
+    if (pids[i] == 0) {
        int start = i * portion;
        int end = (i + 1) * portion;
        for (int j = start ; j < end ; j++) {
