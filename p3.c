@@ -46,6 +46,7 @@ int main(int argc, char *argv[]) {
       for (int k = 0 ; k < n ; k++) {
         if (k != i) {
           kill(pids[k], SIGTERM);
+          printf("child process killed");
          }
       }
     }
